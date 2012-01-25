@@ -3,9 +3,7 @@ Demo project symfony2
 How to Install
 ==============
 
-```
-./bin/vendors update
-```
+``` ./bin/vendors update ```
 
 Doctrine Fixture
 ================
