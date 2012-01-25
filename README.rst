@@ -1,6 +1,6 @@
 Demo project symfony2
 
-[[Build Status](https://secure.travis-ci.org/ruian/DemoProject.png)](http://travis-ci.org/#!/ruian/DemoProject)
+[Build Status](https://secure.travis-ci.org/ruian/DemoProject.png)(http://travis-ci.org/#!/ruian/DemoProject)
 
 How to Install
 ==============
