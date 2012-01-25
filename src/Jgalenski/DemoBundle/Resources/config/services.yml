@@ -1,0 +1,7 @@
+parameters:
+#    jgalenski_tumblr1.example.class: Jgalenski\DemoBundle\Example
+
+services:
+#    jgalenski_tumblr1.example:
+#        class: %jgalenski_tumblr1.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

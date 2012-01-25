@@ -1,0 +1,20 @@
+imports:
+    - { resource: config_dev.yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.filesystem
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false
+
+swiftmailer:
+    disable_delivery: true
+
+mink:
+    base_url:   http://www.uzinagaz2.local/app_test.php
+    show_cmd:   google-chrome %%s
+    default_session: symfony
+behat: ~

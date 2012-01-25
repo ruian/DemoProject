@@ -1,0 +1,7 @@
+JgalenskiDemoBundle_homepage:
+    pattern:  /
+    defaults: { _controller: JgalenskiDemoBundle:Article:index }
+
+JgalenskiDemoBundle_homepage_optimized:
+    pattern:  /optimized
+    defaults: { _controller: JgalenskiDemoBundle:Article:index_optimized }

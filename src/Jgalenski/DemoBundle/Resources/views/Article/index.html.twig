@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>jgalenski - tumblr - pagination</title>
+</head>
+<body>
+{% for article in pagination %}
+<h3>{{ article.getTitle }}</h3>
+<div>
+    {{ article.getContent }}
+</div>
+{% endfor %}
+
+{{ pagination.render|raw }}
+</body>
+</html>
