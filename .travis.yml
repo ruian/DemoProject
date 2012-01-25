@@ -6,6 +6,9 @@ php:
 env:
   - SYMFONY_VERSION=origin/master
 
-before_script: ./bin/vendors update
+before_script: 
+        - ./bin/vendors update
+        - php app/console doctrine:database:create --env=test
+        - php app/console doctrine:schema:create --env=test
 
 script: php app/console --env=test behat @JgalenskiDemoBundle
