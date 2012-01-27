@@ -21,3 +21,15 @@ Feature: ArticleRepository
     Scenario: Add an article
         When I am on "/new"
         Then I should see an ".controls" element
+    
+    Scenario: Add an article and get error
+        When I am on "/new"
+        And I press "Save"
+        Then I should see an ".alert-error" element
+    
+    Scenario: Add an article and get success
+        When I am on "/new"
+        And I fill in "jgalenski_demobundle_articletype[title]" with "test"
+        And I fill in "jgalenski_demobundle_articletype[content]" with "test"
+        And I press "Save"
+        Then I should see an ".alert-success" element
