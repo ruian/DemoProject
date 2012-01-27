@@ -102,11 +102,11 @@ class ArticleController extends Controller
 
     protected function setFlashSuccess($message)
     {
-        $this->get('session')->setFlash('notice-success', $message);
+        $this->get('session')->setFlash('alert-success', $message);
     }
 
     protected function setFlashError($message)
     {
-        $this->get('session')->setFlash('notice-error', $message);
+        $this->get('session')->setFlash('alert-error', $message);
     }
 }
