@@ -22,7 +22,7 @@ use Doctrine\ORM\Query;
 /**
  * Feature context.
  */
-class FeatureContext extends BehatContext //MinkContext if you want to test web
+class FeatureContext extends MinkContext
 {
 //
 // Place your definition and hook methods here:
@@ -118,5 +118,6 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
 
         $this->query = $repo->queryFindOneBy(array('id' => 1));
     }
+
 
 }

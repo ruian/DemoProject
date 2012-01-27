@@ -17,3 +17,7 @@ Feature: ArticleRepository
     Scenario: find one article
         When I want to get one article
         Then I should get a Query object
+
+    Scenario: Add an article
+        When I am on "/new"
+        Then I should see an ".controls" element

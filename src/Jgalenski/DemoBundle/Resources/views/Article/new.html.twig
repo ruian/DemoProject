@@ -8,7 +8,24 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="span8">
+            <div class="offset2 span8">
+                
+                {% if app.session.hasFlash('notice-success') %}
+                <div class="alert alert-success">
+                    <a class="close" data-dismiss="alert">×</a>
+                    <h4 class="alert-heading">Success</h4>
+                    {{ app.session.getFlash('notice-success') }}
+                </div>
+                {% endif %}
+
+                {% if app.session.hasFlash('notice-error') %}
+                <div class="alert alert-error">
+                    <a class="close" data-dismiss="alert">×</a>
+                    <h4 class="alert-heading">Error</h4>
+                    {{ app.session.getFlash('notice-error') }}
+                </div>
+                {% endif %}
+                
                 {% form_theme form_view 'RuianTwitterBootstrapBundle:Form:bootstrap_v2.html.twig' %}
                 <form novalidate class="form-horizontal well" method="post" action="{{ path('JgalenskiDemoBundle_new') }}">
                     {{ form_widget(form_view) }}

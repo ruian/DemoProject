@@ -82,7 +82,14 @@ class ArticleController extends Controller
         if ('POST' === $request->getMethod()) {
             $form->bindRequest($request);
             if (true === $form->isValid()) {
-                
+                $em = $this->get('doctrine.orm.default_entity_manager');
+                $em->persist($entity);
+                $em->flush();
+
+                $this->setFlashSuccess('Congratulation, your article has been saved.');
+                return $this->redirect($this->generateUrl('JgalenskiDemoBundle_new'));
+            } else {
+                $this->setFlashError('Warning, your article can\'t be saved due to some errors.');
             }
         }
 
@@ -91,5 +98,15 @@ class ArticleController extends Controller
             'form_view' => $form->createView(),
             'entity'    => $entity
         ));
+    }
+
+    protected function setFlashSuccess($message)
+    {
+        $this->get('session')->setFlash('notice-success', $message);
+    }
+
+    protected function setFlashError($message)
+    {
+        $this->get('session')->setFlash('notice-error', $message);
     }
 }

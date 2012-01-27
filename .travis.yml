@@ -10,5 +10,6 @@ before_script:
         - ./bin/vendors update
         - php app/console doctrine:database:create --env=test
         - php app/console doctrine:schema:create --env=test
+        - php app/console twitter-bootstrap:compile v2
 
 script: php app/console --env=test behat @JgalenskiDemoBundle
