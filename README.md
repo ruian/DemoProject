@@ -5,7 +5,9 @@ Demo project symfony2
 How to Install
 ==============
 
-``` ./bin/vendors update ```
+``` 
+./bin/vendors update 
+```
 
 Doctrine Fixture
 ================
@@ -35,3 +37,14 @@ Dependances :
  
  * [knp-components](http://github.com/KnpLabs/knp-components)
  * [KnpPaginatorBundle](http://github.com/KnpLabs/KnpPaginatorBundle)
+
+
+TwiterBootstrap
+===============
+
+Dependances :
+
+ * [RuianTwitterBootstrapBundle](http://github.com/ruian/TwitterBootstrapBundle)
+ * [twitter-bootstrap-v1](http://github.com/twitter/bootstrap)
+ * [twitter-bootstrap-vé](http://github.com/twitter/bootstrap/tree/2.0-wip)
+ * [lessphp](http://github.com/leafo/lessphp)

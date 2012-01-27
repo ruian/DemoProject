@@ -25,7 +25,7 @@ $loader->registerNamespaces(array(
     'Behat\\MinkBundle'                 => __DIR__.'/../vendor/bundles',
     'Knp\\Component'                    => __DIR__.'/../vendor/knp-components/src',
     'Knp\\Bundle'                       => __DIR__.'/../vendor/bundles',
-    'Knp\Bundle'                        => __DIR__.'/../vendor/bundles',
+    'Ruian'                       => __DIR__.'/../vendor/bundles',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
@@ -55,3 +55,5 @@ AnnotationRegistry::registerFile(__DIR__.'/../vendor/doctrine/lib/Doctrine/ORM/M
 require_once __DIR__.'/../vendor/swiftmailer/lib/classes/Swift.php';
 Swift::registerAutoload(__DIR__.'/../vendor/swiftmailer/lib/swift_init.php');
 
+// Add support for lessc
+require  __DIR__.'/../vendor/lessphp/lessc.inc.php';

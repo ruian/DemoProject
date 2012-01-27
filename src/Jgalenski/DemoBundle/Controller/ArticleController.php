@@ -3,6 +3,8 @@
 namespace Jgalenski\DemoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Jgalenski\DemoBundle\Entity\Article;
+use Jgalenski\DemoBundle\Form\Type\ArticleType;
 
 
 /**
@@ -68,6 +70,26 @@ class ArticleController extends Controller
 
         return $this->render('JgalenskiDemoBundle:Article:index.html.twig', array(
             'pagination' => $pagination
+        ));
+    }
+
+    public function newAction()
+    {
+        $entity = new Article();
+        $form = $this->createForm(new ArticleType(), $entity);
+        
+        $request = $this->get('request');
+        if ('POST' === $request->getMethod()) {
+            $form->bindRequest($request);
+            if (true === $form->isValid()) {
+                
+            }
+        }
+
+        return $this->render('JgalenskiDemoBundle:Article:new.html.twig', array(
+            'form'      => $form,
+            'form_view' => $form->createView(),
+            'entity'    => $entity
         ));
     }
 }

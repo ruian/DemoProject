@@ -5,3 +5,7 @@ JgalenskiDemoBundle_homepage:
 JgalenskiDemoBundle_homepage_optimized:
     pattern:  /optimized
     defaults: { _controller: JgalenskiDemoBundle:Article:index_optimized }
+
+JgalenskiDemoBundle_new:
+    pattern:  /new
+    defaults: { _controller: JgalenskiDemoBundle:Article:new }

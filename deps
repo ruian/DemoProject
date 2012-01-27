@@ -101,3 +101,17 @@
     git=git://github.com/Behat/MinkBundle.git
     target=/bundles/Behat/MinkBundle
 
+[TwitterBootstrap1]
+    git=git://github.com/twitter/bootstrap.git
+    target=/twitter/bootstrap/v1/
+    version=origin/master
+
+[TwitterBootstrap2]
+    git=git://github.com/twitter/bootstrap.git
+    target=/twitter/bootstrap/v2/
+    version=origin/2.0-wip
+
+[lessphp]
+    git=git://github.com/leafo/lessphp.git
+    target=/lessphp/
+    version=origin/master

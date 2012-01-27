@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Acme\DemoBundle\AcmeDemoBundle(),
             new Jgalenski\DemoBundle\JgalenskiDemoBundle(),
+            new Ruian\TwitterBootstrapBundle\RuianTwitterBootstrapBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

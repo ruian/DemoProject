@@ -25,12 +25,14 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      * @Assert\MaxLength(limit=255, message="Title: You exceed the {{limit}} charactere limit")
      */
     protected $title;
 
     /**
      * @ORM\Column(type="text", length=4000)
+     * @Assert\NotBlank()
      * @Assert\MaxLength(limit=4000, message="Content: You exceed the {{limit}} charactere limit")
      */
     protected $content;
