@@ -94,9 +94,7 @@ class ArticleController extends Controller
         }
 
         return $this->render('JgalenskiDemoBundle:Article:new.html.twig', array(
-            'form'      => $form,
             'form_view' => $form->createView(),
-            'entity'    => $entity
         ));
     }
 
