@@ -46,5 +46,5 @@ Dependances :
 
  * [RuianTwitterBootstrapBundle](http://github.com/ruian/TwitterBootstrapBundle)
  * [twitter-bootstrap-v1](http://github.com/twitter/bootstrap)
- * [twitter-bootstrap-vé](http://github.com/twitter/bootstrap/tree/2.0-wip)
+ * [twitter-bootstrap-v2](http://github.com/twitter/bootstrap/tree/2.0-wip)
  * [lessphp](http://github.com/leafo/lessphp)
