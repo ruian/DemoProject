@@ -12,4 +12,4 @@ before_script:
         - php app/console doctrine:schema:create --env=test
         - php app/console twitter-bootstrap:compile v2
 
-script: php app/console --env=test behat @JgalenskiDemoBundle
+script: php app/console --env=test behat
