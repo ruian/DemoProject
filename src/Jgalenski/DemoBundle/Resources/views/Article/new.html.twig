@@ -4,6 +4,7 @@
     <title>New article</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/ruiantwitterbootstrap/css/bootstrapv2.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/ruiantwitterbootstrap/css/bootstrapv2-responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/ruianuploadify/js/swfobject.js') }}">
 </head>
 <body>
     <div class="container">
@@ -14,7 +15,16 @@
 
                 {% form_theme form_view 'RuianTwitterBootstrapBundle:Form:bootstrap_v2.html.twig' %}
                 <form novalidate class="form-horizontal well" method="post" action="{{ path('JgalenskiDemoBundle_new') }}">
+                    <div class="control-group">
+                    {{ form_label(form_view.picture_tmp) }}
+                    <div class="controls">
+                        {{ form_widget(form_view.picture_tmp.file, {'attr' : {'data-path' : path('JgalenskiDemoBundle_upload'), 'data-folder' : '/uploads/article/picture/'}})}}
+                    </div>
+                    </div>
+
                     {{ form_widget(form_view) }}
+                    <div id="avatar-preview">
+                    </div>
                     <div class="well">
                         <input type="submit" value="Save" class="btn" />
                     </div>
@@ -24,5 +34,25 @@
     </div>
     <script type="text/javascript" src="{{ asset('bundles/jgalenskidemo/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/ruiantwitterbootstrap/js/bootstrapv2.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/ruianuploadify/js/swfobject.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/ruianuploadify/js/jquery.uploadify.v2.1.4.js') }}"></script>
+    <script type="text/javascript">
+    $('#jgalenski_demobundle_articletype_picture_tmp_file').uploadify({
+        'uploader'  : '/bundles/ruianuploadify/swf/uploadify.swf',
+        'script'    : $('#jgalenski_demobundle_articletype_picture_tmp_file').attr('data-path'),
+        'folder'    : $('#jgalenski_demobundle_articletype_picture_tmp_file').attr('data-folder'),
+        'scriptData'   : {
+            '_uploadify' : true,
+            '_session' : $('#jgalenski_demobundle_articletype_picture_tmp_file').attr('data-session'),
+        },
+        'cancelImg' : '/bundles/ruianuploadify/images/cancel.png',
+        'auto'      : true,
+        'onComplete'  : function(event, ID, fileObj, response, data) {
+            response = jQuery.parseJSON(response);
+            $('#avatar-preview').html("<img src='"+response.folder+response.file+"' />");
+            $('#jgalenski_demobundle_articletype_picture_file').attr('val', response.folder+response.file);
+        }
+      });
+    </script>
 </body>
 </html>

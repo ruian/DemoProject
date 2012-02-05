@@ -38,6 +38,13 @@ class Article
     protected $content;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    protected $picture;
+
+    protected $picture_tmp;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     protected $created_at;
@@ -104,5 +111,39 @@ class Article
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    /** 
+     * @return void
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+    
+    /**
+     * @param $picture
+     * @return void
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+    }
+
+    /** 
+     * @return void
+     */
+    public function getPictureTmp()
+    {
+        return $this->picture_tmp;
+    }
+    
+    /**
+     * @param $picture
+     * @return void
+     */
+    public function setPictureTmp($picture)
+    {
+        $this->picture_tmp = $picture;
     }
 }

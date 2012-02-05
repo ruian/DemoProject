@@ -20,6 +20,8 @@ class ArticleType extends AbstractType
                     'class' => 'span5'
                 )
             ))
+            ->add('picture', 'hidden')
+            ->add('picture_tmp', 'uploadify_ressource')
         ;
     }
 

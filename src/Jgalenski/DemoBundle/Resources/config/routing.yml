@@ -9,3 +9,7 @@ JgalenskiDemoBundle_homepage_optimized:
 JgalenskiDemoBundle_new:
     pattern:  /new
     defaults: { _controller: JgalenskiDemoBundle:Article:new }
+
+JgalenskiDemoBundle_upload:
+    pattern:  /misc/upload
+    defaults: { _controller: JgalenskiDemoBundle:Article:upload }

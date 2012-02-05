@@ -5,7 +5,8 @@ namespace Jgalenski\DemoBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Jgalenski\DemoBundle\Entity\Article;
 use Jgalenski\DemoBundle\Form\Type\ArticleType;
-
+use Ruian\UploadifyBundle\Model\Ressource;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Controller used for Article
@@ -96,6 +97,22 @@ class ArticleController extends Controller
         return $this->render('JgalenskiDemoBundle:Article:new.html.twig', array(
             'form_view' => $form->createView(),
         ));
+    }
+
+    public function uploadAction()
+    {
+        $request = $this->get('request');
+
+        $entity = new Ressource();
+
+        $entity->setFolder($request->request->get('folder'));
+        $entity->setFile($request->files->get('Filedata'));
+
+        $entity->upload();
+
+        $response = new Response(json_encode($entity->toArray()));
+        $response->headers->set('Content-Type', 'application/json; charset=UTF-8');
+        return $response;
     }
 
     protected function setFlashSuccess($message)

@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Acme\DemoBundle\AcmeDemoBundle(),
             new Jgalenski\DemoBundle\JgalenskiDemoBundle(),
             new Ruian\TwitterBootstrapBundle\RuianTwitterBootstrapBundle(),
+            new Ruian\UploadifyBundle\RuianUploadifyBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
