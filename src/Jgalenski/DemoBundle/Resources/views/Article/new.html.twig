@@ -24,6 +24,7 @@
 
                     {{ form_widget(form_view) }}
                     <div id="avatar-preview">
+
                     </div>
                     <div class="well">
                         <input type="submit" value="Save" class="btn" />
@@ -50,7 +51,7 @@
         'onComplete'  : function(event, ID, fileObj, response, data) {
             response = jQuery.parseJSON(response);
             $('#avatar-preview').html("<img src='"+response.folder+response.file+"' />");
-            $('#jgalenski_demobundle_articletype_picture_file').attr('val', response.folder+response.file);
+            $('#jgalenski_demobundle_articletype_picture').attr('val', response.folder+response.file);
         }
       });
     </script>
